@@ -1,1 +1,151 @@
 /* You can add global styles to this file, and also import other style files */
+.cards {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  // margin: 3rem;
+  padding: 15px;
+padding-left: 15px;
+
+}
+
+body {
+  background-color: rgb(64, 131, 175);
+  text-align: center;
+}
+.corsel{
+width: 100%;
+
+ padding: 15px;
+text-align: right;
+
+}
+.input-corsel{
+  border-radius: 100%;
+  height: 50px;
+  border: none;
+   background: none;
+  
+
+}
+.card {
+
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  transition: .5s;
+  margin: 15px;
+  height: 650px;
+
+}
+
+p {
+  overflow: hidden;
+  /* remove o estouro do elemento */
+  text-overflow: ellipsis;
+  /* adiciona “...” no final */
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  /* quantidade de linhas */
+  -webkit-box-orient: vertical;
+  /* conteúdo será apresentado verticalmente */
+}
+
+.card-title {
+  overflow: hidden;
+  /* remove o estouro do elemento */
+  text-overflow: ellipsis;
+  /* adiciona “...” no final */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* quantidade de linhas */
+  -webkit-box-orient: vertical;
+  /* conteúdo será apresentado verticalmente */
+}
+.center-input{
+  text-align: center;
+ width: 70%;
+  padding-left: 30%;
+ }
+.titlePage {
+
+  padding: 20px;
+  font-size: 50px;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+img {
+
+  // max-height: 370px;
+  max-height: 429px;
+  // height: 350px;
+  height: 404px;
+}
+
+@function makelongshadow($length, $angle) {
+  $val: 0px 0px transparent;
+
+  @for $i from 1 through $length {
+    $val: #{$val},
+    #{$i}px #{$i*$angle}px #aaa;
+  }
+
+  @return $val;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:700,900');
+
+
+.txt {
+  text-align: center;
+  font-family: 'Roboto';
+  font-size: 12vmin;
+  font-weight: 700;
+  animation: netflix_style 3.5s infinite;
+  outline: none;
+  white-space: nowrap;
+}
+
+@keyframes netflix_style {
+  0% {
+    text-shadow: makelongshadow(100, 1);
+    color: #f3f3f3;
+    transform: scale(1.5, 1.5);
+  }
+
+  10% {
+    text-shadow: makelongshadow(100, 1.5);
+    color: #f3f3f3;
+    transform: scale(1.5, 1.5);
+  }
+
+  15% {
+    color: #f3f3f3;
+  }
+
+  20% {
+    color: #e90418;
+    text-shadow: none;
+    transform: scale(1.1, 1.1);
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0;
+    color: #e90418;
+    transform: scale(0.85, 0.9);
+  }
+
+  100% {
+    opacity: 0;
+  }
+
+}

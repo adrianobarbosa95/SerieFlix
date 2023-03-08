@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  @Input() cor: string = '';
   title = 'SerieFlix';
+  tema = false;
+
+  
+  changeColor(){ 
+
+    document.body.style.backgroundColor = this.cor;
+      }
 }

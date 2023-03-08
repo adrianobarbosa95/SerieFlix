@@ -1,0 +1,30 @@
+ 
+ <div class="center-input">
+  <form>
+   <div class="input-group mb-3 ">
+    
+   <input type="text" [(ngModel)]="filme" (keyup) = "buscar($event)" name="filme" class="form-control" placeholder="Nome do Filme" aria-label="Recipient's username" aria-describedby="button-addon2">
+     <div class="input-group-append">
+       <!-- <button class="btn btn-outline-secondary" (click) = "buscar($event)" type="button" id="button-addon2">Buscar filme</button> -->
+     </div>
+ 
+    
+   </div>
+ </form>
+ </div>
+ 
+<div class="cards">
+
+  <div *ngFor="let item of filmes" >
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" routerLink="detalhe" (click) = "verImagemService(item.id)" src="{{item.imagem ? 'https://image.tmdb.org/t/p/w500/'+item.imagem : 'https://apostiladecinema.com.br/wp-content/uploads/2021/08/a-nuvem-critica-filme-netflix-poster-scaled.jpg'}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{item.original_title}}</h5>
+        <p class="card-text">{{item.overview}}</p>
+
+        <a href="#" class="btn btn-primary"><ng-content select="[btn]"></ng-content>Ver Detalhe</a>
+      </div>
+    </div>
+  </div>
+
+</div>
